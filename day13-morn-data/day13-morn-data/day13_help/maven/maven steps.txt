@@ -1,0 +1,49 @@
+For Maven web app with hibernate(POM.xml support for ---Spring MVC/ AOP/Core/REST/Hibernate)
+
+1.Create Maven Project
+New -- Maven Project ---
+Check Create Simple Project (skip archetype selection)
+Choose WAR
+Check Use default workspace location
+Next
+Group ID -- reversed domain name (eg : if domain name is www.serverside.com , then it can be com.serverside )
+Artifact ID -- Name of the WAR File
+Name -- Testing web app with hibernate
+Finish
+
+2. Modify pom.xml , to add
+2.1 Properties  -- 
+2.2 Build plugins  -- 2 plugins (maven-compiler-plugin & maven-eclipse-plugin)
+2.3 Dependencies for --mysql , JUnit , spring , hibernate & json.
+
+3. Project -- R Click -- Maven --Update Project
+
+4. Check project structure for simple Java web application project.
+src/main/java -- Java sources
+src/test/java -- JUnit Test Cases
+src/main/resources --configuration files
+src/test/resources --configuration files for testing
+src/main/webapp --root of web application(equivalent to WebContent)
+
+5. Choose Java EE perspective
+Project -- R Click --Java EE Tools --Generate dep desc stub
+This will create src/main/webapp/WEB-INF/web.xml
+
+Add welcome page as "index.jsp" in web.xml
+
+6. Project -- R Click --Properties --Targeted Runtimes -- Choose Tomcat 8
+
+7. Create packaged classes  under src/main/java.
+utils,pojos,dao,beans,listeners
+
+7.5 Copy log4j.properties,database.properties,hibernate-ersistence.xml(i.e all configuration files) under src/main/resources
+
+Copy spring-servlet.xml under <WEB-INF>
+
+8. Project -- R Click  -- Maven Build --goals --clean install
+
+8.5 In case of any errors(red cross!) 
+Project -- R Click -- Maven --Update Project
+
+9. Project -- R Click --- Run on server ---run
+

@@ -1,0 +1,119 @@
+Day 1
+
+0. Extract Eclipse (optional!)
+Extract J2EE docs (MANDATORY)
+1.Extract Apache Tomcat.
+2. Create new J2EE workspace in eclipse . (open Java EE perspective & confirm JRE location --pointing to JDK)
+3. Add Apache Tomcat server to workspace & test it.
+4. With IDE, create J2EE compliant web application Add index.html .
+Add a link on index page to invoke servlet(HelloServlet to test life cycle of servlet) -- as shown already.
+
+5. Add a link on index page.
+Sign Up --- 
+5.1 register.html 
+Create customer registration form to accept customer details
+name,email,password(type=password),registration date(type=date),reg amount(type="number"),role(radio btn)
+Submit it to servlet 
+5.2 CustomerRegServlet -- create a servlet to display customer information.
+
+6. Evening Lab 
+Reading H.W -- HTTP overview,Web server overview,request-response flow,j2ee compliant folder structure & j2ee_sequence.
+
+Day 2
+0. MANDATORY
+Import day2_web in your workspace ,edit DBUtils & test entire flow.
+
+1. Solve Customer Registration using Servlet-JDBC integration
+Flow 
+index.html(link --Sign Up) --register.html(reg form) --CustomerRegServlet(init,destroy,doGet/Post,loadOnstartUp) --BookShopDao (DBUtils) --Customer POJO --DB(my_customers table)
+Send reg status message to client browser.
+Discard session.
+Add a Link "Proceed to Login" ----login.html
+
+Day 3
+1. Import day3_web in your workspace & add "ShowCart" page. & test complete case study.
+
+2. Revise from day3_web , server pull (RD's forward scenario)
+
+3. Optional (If time permits...)
+Solve Vendor Management case study.
+
+Day 4
+0. Creat a new JSP template for HTML 5 & change page encoding to UTF-8
+
+1. Import day4_jsp in your workspace & trace all links 
+(Revise using readme_jsp)
+
+2. MUST look at translated JSP pages (.java) --after you have run the application.
+
+3. Try this !
+index.jsp -- Add a link "Display All Vendors" -- list.jsp
+Should display all vendors' details
+(NOTE : Pls copy your existing DBUtils,VendorDAO & Vendor POJO & continue.)
+
+Day 5
+Afternoon lab
+1. import day5_jsp in your workspace & revise entire flow
+JSP--JB--DAO--POJO --DB
+
+2. Solve vendor management case study for 
+2.1 List Vendors 
+2.2 Delete Vendor Details
+
+(No scriptlets please! Must be done using JSP--JB--DAO--POJO --DB  layers)
+
+Night Lab
+0. MANDATORY
+Copy day5 help on your lap tops . Test JDBC code for DB connectivity (class.forName & getConnection) .
+We will be setting up hibernate tomorrow.
+
+1. Revise all concepts using day5's sequence & readme_jsp
+2. Answer this (reading H.W) --exam objective
+2.1 isThreadSafe
+2.2 getSession vs getSession(create)
+2.3 init vs init(servletConfig)
+2.4 request.getRD vs ctx.getRD
+
+
+Day 6
+1. Revise all steps in hibernate.
+2. Create Java project & add following
+2.1 Register new vendor (session.save)
+2.2 List all vendors (jpql)
+2.3 List Vendor details by vendor id.(session.get)
+
+Day 8
+Vendor & Bank Accounts --continuation of Vendor management system (refer to flow diagram)
+
+Day 9
+1. Confirm spring plug-in (Spring IDE) in your eclipse.
+2. Create user lib containing jars from below folder.
+<day9_help\spring-help\spring4-hibernate5-rest-jars> 
+
+3. Import day9_spring project in your workspace & confirm spring bean life cycle (ie. bean tag , setter based D.I , scopes , lazy-init )
+
+4. Import day9_hibernate in your workspace & revise hibernate session API.
+
+5. MUST complete Day 8 assignment --web application before Monday.
+
+Day11
+1. MUST import day11_spring_mvc_hibernate in your workspace & trace entire flow.
+
+2. Create spring-mvc-hibernate based web application for searching flights.
+
+
+Day 12
+
+1. Refer to Rest Server & client & revise .
+2. Refer to <day12_help\REST assignment.png> & solve as discussed.
+
+
+Day13
+1. Create 2 web apps 
+REST server & REST client for
+Listing all stocks withing specified price range.
+Create new stock.
+
+
+
+

@@ -1,0 +1,23 @@
+1.  Adding transactional method 'com.app.service.VendorDaoBasedService.validateUser' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+--done by (HibernateTransactionManager.java
+
+2. Using DataSource [org.apache.commons.dbcp2.BasicDataSource@6be2311d] of Hibernate SessionFactory for HibernateTransactionManager
+
+3. in process add vendor Vendor [id=null, name=meera, email=meera@gmail, password=abc#123, city=Indore, phoneNo=33667789, role=vendor, regDate=Wed Nov 14 00:00:00 IST 2018] org.springframework.validation.BeanPropertyBindingResult: 0 errors
+no p.l errs...
+
+4. Creating new transaction with name [com.app.service.VendorDaoBasedService.registerVendor]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+[DEBUG] [http-nio-7070-exec-16 10:45:32] (HibernateTransactionManager.java:doBegin:436) 
+
+5. Opened new Session for Hibernate transaction
+
+
+6.  Preparing JDBC Connection of Hibernate Session 7.  Exposing Hibernate transaction as JDBC transaction [1062485834, URL=jdbc:mysql://localhost:3306/test, UserName=root@localhost, MySQL Connector Java]
+Hibernate: insert into spring_hib_vendors (city, email, name, password, ph_no, reg_amt, reg_date, role) values (?, ?, ?, ?, ?, ?, ?, ?)
+
+7. 
+Initiating transaction rollback
+[(HibernateTransactionManager.java:doRollback:604) Rolling back Hibernate transaction on Session 
+
+
+8. (HibernateTransactionManager.java:doCleanupAfterCompletion:680) Closing Hibernate Session  after transaction

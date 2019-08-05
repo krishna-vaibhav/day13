@@ -1,0 +1,55 @@
+Understanding Transaction Management in Spring
+
+How to automate Tx management in spring?
+1. Add spring supplied tx manager bean in config file
+<bean id="transactionManager" 		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+p:sessionFactory-ref="sessionFactory">
+</bean>
+2.  Enable tx annotation support
+	<tx:annotation-driven />
+
+3. Use @Transactional attribute typically in Service or DAO Layer.
+ref eclipse project : spring_jpa_txs_new , run TestTransactional , tester class
+(which uses StockDao's increaseStock method)
+log4j.properties 
+log4j.logger.org.springframework.orm.hibernate5=debug
+
+3.1 Comment @Transactional from DAO class level & run TestTransactional.java n
+Observe
+
+3.2 Un comment @Transactional & observe.(DAO layer --select + update)
+1. with flag=false (tx commit)
+2. with flag=false & timeout (tx rolled back)
+3. with flag=true (tx rolled back on runtime exception)
+
+4. How to customize tx management -- using @Transactional attributes
+4.1 timeout
+eg : @Transactional(timeout=100)
+service/dao layer method
+4.2 readOnly -- 
+def value --false;
+eg : @Transactional(readOnly=true)
+4.3 
+@Transactional(rollbackFor = IOException.class, noRollbackFor = RuntimeException.class)
+public void doSomething(...)
+
+4.4 Tx propagation level
+
+Demo -- Run  TestTxPropagation.java 
+1. With AccountDaoImpl's updateBalance(flag=false) with def propagation --REQUIRED
+2. Same as above , BUT with its flag=true(causing runtime err)
+3. With AccountDaoImpl's updateBalance with  propagation(flag=false) --REQUIRES_NEW
+4. Same as above , BUT with its flag=true(causing runtime err)
+
+Observe the console carefully
+
+4.5 Tx isolation level
+Demo --Run TestTxIsolation.java
+1. with StockDao's checkStock , with READ_UNCOMMITTED
+2. with StockDao's checkStock , with READ_COMMITTED
+
+Run TestCheckStockRepeatableRead.java
+1. with StockDao's checkStockRepeatable --with READ_COMMITTED
+2. with StockDao's checkStockRepeatable --with REPEATABLE_READ
+
+

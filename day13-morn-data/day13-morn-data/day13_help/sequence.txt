@@ -1,0 +1,88 @@
+Revise RESTful web services
+read -- "reagrding REST" & then "regarding RestController" 
+Revise Steps & API
+
+REST Client side exception handling
+1. Catch HttpClientErrorException 
+2. Methods to use
+2.1 String getStatusCode()
+2.2 String getResponseBodyAsString()
+
+Exam help --go through "SOAP vs REST differences"
+------------------
+P.L Validations -- refer to "regarding validation"
+-------------
+Tx management
+Understanding Transaction Management in Spring
+
+How to automate Tx management in spring?
+1. Add spring supplied tx manager bean in config file
+<bean id="transactionManager" 		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory">
+</bean>
+2.  Enable tx annotation support
+	<tx:annotation-driven />
+
+3. Use @Transactional attribute typically in Service or DAO Layer.
+
+4. How to customize tx management -- using @Transactional attributes
+4.1 timeout
+eg : @Transactional(timeout=100)
+service/dao layer method
+4.2 readOnly -- 
+def value --false;
+eg : @Transactional(readOnly=true)
+4.3 
+@Transactional(rollbackFor = IOException.class, noRollbackFor = RuntimeException.class)
+public void doSomething(...)
+
+4.4 Tx propagation level
+@Transactional(propagation=Propagation.REQUIRES_NEW)
+
+def value = REQUIRED.
+
+4.5 Tx isolation level
+@Transactional(isolation=Isolation.REPEATABLE_READ)
+--suppresses dirty n non-repeatable read BUT phantom read can still occur.
+
+For More details -- refer to "spring-transactional"
+-------------------------------
+Maven
+-------------------
+jar --- java archival format (=compressed bundle of packaged java classes)
+
+Creating jar w/o IDE
+
+<JDK>/bin --jar executable exists
+
+1. jar cvf jarFileName
+c-create,v-verbose,f-filename
+
+For runnable jar -- (One of the classes contain main)
+2. jar cvfm my.jar my.mf
+m--manifest file name (containing name of runnable class)
+
+3. jar tvf my.jar
+--displays contents of jar file
+
+4. jar xvf my.jar --- extracts jar contents.
+
+For distributing web applications --use -
+WAR files
+WAR -- web application archive.
+(using same jar tool)
+
+To run Apache Tomat w/o IDE
+
+1. set env vars
+java_home = <Java Install dir >
+tomcat_home=<tomcat install dir>
+2. <tomcat>\bin\starup.bat --launch server
+
+------------------------------------
+Spring AOP
+
+Servlet Filters
+
+Struts
+
