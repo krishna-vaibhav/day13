@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <name>day13_web_maven</name>
    	<properties>
-		<spring.version>4.3.9.RELEASE</spring.version>
+		<spring.version>5.3.18</spring.version>
 		<hibernate.version>5.2.6.Final</hibernate.version>
 		<jackson.version>2.5.3</jackson.version>
 	</properties>
